@@ -139,7 +139,7 @@ Tente reformular sua consulta ou verificar a configuração do sistema."""
             historical_text = "Nenhum contexto histórico encontrado nos livros."
         
         # Formata avaliação
-        if is_mate and mate_in is not None:
+        if is_mate and mate_in is not None and mate_in != 0:
             eval_text = f"Mate em {abs(mate_in)} movimento(s)"
             if mate_in > 0:
                 eval_text += " (Brancas ganham)"

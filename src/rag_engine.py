@@ -226,7 +226,8 @@ class ChessRAGEngine:
                 # ChromaDB retorna distâncias (menor = mais similar)
                 # Converte para score de similaridade
                 distance = results['distances'][0][i]
-                similarity_score = 1.0 / (1.0 + distance)
+                # Protege contra valores negativos ou muito pequenos
+                similarity_score = 1.0 / (1.0 + max(0.0, distance))
                 
                 if similarity_score >= min_score:
                     formatted_results.append({

@@ -41,7 +41,7 @@ class ChessAnalyzer:
             if not engine_path.exists():
                 raise FileNotFoundError(
                     f"Engine Maia não encontrada em: {self.engine_path}. "
-                    "Por favor, baixe o binário da Maia Chess e coloque no diretório engine/"
+                    "Por favor, baixe o binário da Maia Chess e coloque no diretório correto."
                 )
             self.engine = chess.engine.SimpleEngine.popen_uci(str(engine_path))
     
